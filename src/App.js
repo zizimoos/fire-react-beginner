@@ -8,8 +8,8 @@ const Section = styled.div`
   height: 100vh;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: center;
+  flex-wrap: wrap;
 `;
 const Loading = styled.div`
   width: 100%;

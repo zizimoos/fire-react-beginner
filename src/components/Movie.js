@@ -2,11 +2,22 @@ import styled from "styled-components";
 
 const Container = styled.div`
   width: 500px;
-  margin-left: 50px;
+  margin: 50px;
+
   margin-bottom: 20px;
   padding: 5px 5px 0px 5px;
   font-family: "Roboto Mono", monospace;
+
   background-color: whitesmoke;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(200, 200, 200, 0.95),
+      rgba(255, 255, 255, 0.9)
+    ),
+    ${(props) => `url(${props.img})`};
+  background-size: cover;
+  background-position: top;
+  /* background-blend-mode: color-dodge; */
   /* background-color: #5c97bf; */
   border-radius: 5px;
 `;
@@ -15,6 +26,11 @@ const Poster = styled.img`
   width: 200px;
   margin-right: 10px;
   border-radius: 5px;
+  opacity: 0.2;
+  transition: opacity 0.5s ease-in-out;
+  :hover {
+    opacity: 1;
+  }
 `;
 
 const Context = styled.div`
@@ -55,7 +71,7 @@ const Summary = styled.div`
 
 const Movie = ({ year, title, genres, summary, poster }) => {
   return (
-    <Container>
+    <Container img={poster}>
       <Context>
         <Poster src={poster} alt="poster"></Poster>
         <UpperInfo>
